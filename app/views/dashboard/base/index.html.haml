@@ -3,11 +3,15 @@
 
 = render 'shared/calendar', :start_date => @start_date, :user => current_user, :work_units => @work_units
 
-.row-fluid
-  .span6
-    = render 'tickets/add_ticket'
-  .span6
+%ul.nav.nav-tabs{"data-tabs" => "tabs"}
+  %li.active= link_to "Add Work Unit", "#add_work_unit"
+  %li= link_to "Add Ticket", "#add_ticket"
+
+.tab-content
+  #add_work_unit.tab-pane.active
     = render 'work_units/add_work_unit'
+  #add_ticket.tab-pane
+    = render 'tickets/add_ticket'
 
 .dashboard_2week_time_report
   = render 'two_week_time_report'
@@ -16,3 +20,8 @@
 
 - content_for :javascripts do
   = javascript_include_tag 'add_taxonomy'
+  = javascript_include_tag "bootstrap-tabs"
+  :javascript
+    $(function() {
+      $('.tabs').tabs();
+    });
