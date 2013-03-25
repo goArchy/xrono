@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.8'
+gem 'rails', '~> 3.2.13'
 gem 'acl9', '~> 0.12.0'
 gem 'devise', '~> 1.4.9'
 gem 'gravtastic', '~> 3.2.6'
@@ -58,6 +58,7 @@ group :test do
   gem 'simplecov-rcov'
   gem 'spork', '0.9.0.rc9'
   gem 'ci_reporter'
+  gem "selenium-webdriver", "~> 2.31.0"
 end
 
 platforms :jruby do
